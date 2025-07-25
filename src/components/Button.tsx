@@ -2,13 +2,16 @@ import { LinkField } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import clsx from "clsx";
 
+import React from "react";
+
 type Props = {
   buttonLink: LinkField;
   buttonText: string | null;
   className?: string;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 };
 
-export default function Button({ buttonLink, buttonText, className }: Props) {
+export default function Button({ buttonLink, buttonText, className, onClick }: Props) {
   return (
     <PrismicNextLink
       className={clsx(
@@ -16,6 +19,7 @@ export default function Button({ buttonLink, buttonText, className }: Props) {
         className,
       )}
       field={buttonLink}
+      onClick={onClick}
     >
       {buttonText}
     </PrismicNextLink>

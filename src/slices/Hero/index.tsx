@@ -26,7 +26,10 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 /**
  * Component for "Hero" Slices.
  */
-const Hero = ({ slice }: HeroProps): JSX.Element => {
+import React, { useState } from "react";
+
+const Hero = ({ slice }: HeroProps): React.ReactElement | null => {
+  const [clicked, setClicked] = useState(false);
   const ready = useStore((state) => state.ready);
   const isDesktop = useMediaQuery("(min-width: 768px)", true);
 
@@ -101,6 +104,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     { dependencies: [ready, isDesktop] },
   );
 
+  if (clicked) {
+    return null;
+  }
+
   return (
     <Bounded
       data-slice-type={slice.slice_type}
@@ -134,6 +141,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               buttonLink={slice.primary.button_link}
               buttonText={slice.primary.button_text}
               className="hero-button mt-12"
+              onClick={(e) => {
+                e.preventDefault();
+                setClicked(true);
+              }}
             />
           </div>
         </div>
