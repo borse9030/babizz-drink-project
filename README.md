@@ -1,25 +1,37 @@
-# Fizzi Website - Final code
+🚀 Launch the Project Without Taking the Course
+Want to skip the tutorial and launch your own version of the Fizzi website on Prismic right away? Follow these quick steps:
 
-This is the final code for the YouTube tutorial course where we build a 3D animated e-commerce landing page for the fictional soda brand, Fizzi!
+✅ 1. Clone the Project with the Starter Template
+Use the official Slice Machine starter to scaffold your project:
 
-For more information and to watch the course go to the [course documentation](https://dub.sh/fizzi).
+bash
+Copy
+Edit
+npx @slicemachine/init@latest --starter course-fizzi-next
+🌐 2. Configure Your Prismic Repository
+Open the Prismic dashboard.
 
-## Skip the tutorial and launch the site
+Select the content language: English - United States.
 
-If you don’t want to go through the tutorial, but want your own version of the website deployed on Prismic, follow these directions:
+🧩 3. Set Up the Demo Content Automatically
+Run the content setup script to populate your Prismic repository:
 
-1. Clone the code:
-    
-    ```tsx
-    npx @slicemachine/init@latest --starter course-fizzi-next
-    ```
-    
-2. Open the Prismic repository and select “English - United States”.
-3. Run the content set up script:
-    
-    ```tsx
-    npm run set-up-content
-    ```
-    
-4. Open the migration release and publish it. A URL will be printed on the screen.
-5. Set up the slice simulator URL: `http://localhost:3000/slice-simulator`
+bash
+Copy
+Edit
+npm run set-up-content
+📦 4. Publish the Prebuilt Content Release
+Follow the instructions in your terminal.
+
+Click the generated URL to open the release in Prismic.
+
+Review and publish the content directly.
+
+🔧 5. Configure the Slice Simulator
+Ensure the Slice Simulator is properly set up for local development by assigning the simulator URL:
+
+txt
+Copy
+Edit
+http://localhost:3000/slice-simulator
+This allows you to preview and build custom Prismic slices visually in your development environment.
